@@ -7,7 +7,7 @@ $password =$_POST['password'];
 // To protect MySQL injection 
 $username = stripslashes($username);
 $password = stripslashes($password);
-
+$password=md5($password);
 
 
 $query = "SELECT * FROM users WHERE username = '$username' AND userpassword ='$password'";

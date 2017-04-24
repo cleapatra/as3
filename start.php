@@ -1,4 +1,6 @@
 <?php session_start();
+?><link rel="stylesheet" href="button.css">
+<?php
 
     class navigation
 {
@@ -79,17 +81,18 @@ for ($i=0;$i<$random;$i++){
 
     //display the current page
     $current=basename($_SERVER['PHP_SELF']);
-echo "Current Page=".$current;
-    //pop the next page
+echo "<button>Current Page (".$current.")</button>";
+    //pop the next page from the stack as a link
     $link=array_pop($_SESSION["navlinks"]);
-echo "<a href='";
+echo "<button><a href='";
 echo $link;
-echo "'>Next Page (".$link.")</a><br>";
+echo "'>Next Page (".$link.")</a></button>";
 
+//store current page in session
+    $_SESSION["pagetrack"]=basename($_SERVER['PHP_SELF']);  
     
-     $_SESSION["pagetrack"]=basename($_SERVER['PHP_SELF']);  
-    
-    
+ //start the counter
+$_SESSION["countpages"]=0;
 
 
 
