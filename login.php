@@ -18,18 +18,9 @@ if(mysqli_num_rows($result)==1){
     $_SESSION['loggedin'] = "yes";
     $_SESSION['username'] = $username;
     echo $username." you are logged in<BR>";
-    echo "<a href='logout.php'>Log out</a><br><br>";
-    echo "<br><a href='sql1.php'>sql1.php</a>";
-    echo "<br><a href='sql2.php'>sql2.php</a>";
-    echo "<br><a href='sql3.php'>sql3.php</a>";
-    echo "<br><a href='sql4.php'>sql4.php</a>";
-    echo "<br><a href='sql5_1.php'>sql5_1.php</a>";
-    echo "<br><a href='sql6.php'>sql6.php</a>";
-    echo "<br><a href='sql7.php'>sql7.php</a>";
-    echo "<br><a href='sql8.php'>sql8.php</a>";
-    echo "<br><a href='sql9.php'>sql9.php</a>";
-    echo "<br><a href='sql10.php'>sql10.php</a>";
+    echo "<br><a href='start.php'>Go to Start.php</a><br><br><br>";
     
+    echo "<a href='logout.php'>Log out</a><br><br>";  
 }
 else {
     echo "invalid log in information. Please try again or <a href='register.html'>Register</a>";

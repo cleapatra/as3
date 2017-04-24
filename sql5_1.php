@@ -11,8 +11,7 @@ session_start();?>
             BookID of record to be updated: <input type="text" name="bookID"/>
              <br/>
            New Price for book: <input type="text" name="newprice"/>
-        
-        <input type="submit" name="submit" value="submit"/>
+           <input type="submit" name="submit" value="submit"/>
         </form>
 <?php 
 }
