@@ -1,7 +1,7 @@
 <?php session_start();
 ?><link rel="stylesheet" href="button.css">
 <?php
-
+if ($_SESSION['loggedin']== "yes"){
     class navigation
 {
     protected $stack;
@@ -56,7 +56,10 @@ echo "'>Next Page (".$link.")</a></button>";
  //start the counter
 $_SESSION["countpages"]=0;
 
-
+}
+else{
+header('Location: login.html');
+}
 
 
 ?>
