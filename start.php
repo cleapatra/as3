@@ -5,46 +5,27 @@
     class navigation
 {
     protected $stack;
-    protected $limit;
-    
-    public function __construct($limit = 10) {
-        // initialize the stack
+
+    public function __construct() {
+        // load the stack
         $this->stack = array();
-        // stack can only contain this many items
-        $this->limit = $limit;
     }
 
     public function push($item) {
-        // trap for stack overflow
-        if (count($this->stack) < $this->limit) {
-            // prepend item to the start of the array
-            array_push($this->stack, $item);
-        } else {
-            throw new RunTimeException('Stack is full!'); 
-        }
+        //push variables to the end of the array
+        array_push($this->stack, $item);
+       
     }
 
     public function pop() {
-        if ($this->isEmpty()) {
-            // trap for stack underflow
-	      throw new RunTimeException('Stack is empty!');
-	  } else {
-            // pop item from the start of the array
+        //return the last value in the array
             return array_pop($this->stack);
-        }
     }
 
-    public function top() {
-        return current($this->stack);
-    }
-
-    public function isEmpty() {
-        return empty($this->stack);
-    }
 }
 
 $navlinks = new navigation();
-
+//insert the links into an array
 $_SESSION["navlinks"]= array();
 $_SESSION["navlinks"][]='sql1.php';
 $_SESSION["navlinks"][]='sql2.php';
@@ -56,27 +37,8 @@ $_SESSION["navlinks"][]='sql7.php';
 $_SESSION["navlinks"][]='sql8.php';
 $_SESSION["navlinks"][]='sql9.php';
 $_SESSION["navlinks"][]='sql10.php';
-   
+// shuffle the array so that they don't pop in a FILO order, but randomly.
 shuffle($_SESSION["navlinks"]);
-/*
-$links->push('sql1.php');
-$links->push('sql2.php');
-$links->push('sql3.php');
-$links->push('sql4.php');
-$links->push('sql5_1.php');
-$links->push('sql7.php');
-$links->push('sql8.php');
-$links->push('sql9.php');
-$links->push('sql10.php');
-*/
-/*
-$random=rand(0,8);
-for ($i=0;$i<$random;$i++){
- $links->pop();
-
-}
-
-*/
 
 
     //display the current page
