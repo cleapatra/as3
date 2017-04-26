@@ -37,7 +37,7 @@ $_SESSION["navlinks"][]='sql7.php';
 $_SESSION["navlinks"][]='sql8.php';
 $_SESSION["navlinks"][]='sql9.php';
 $_SESSION["navlinks"][]='sql10.php';
-// shuffle the array so that they don't pop in a FILO order, but randomly.
+// shuffle the array so that they don't appear in FILO order.
 shuffle($_SESSION["navlinks"]);
 
 

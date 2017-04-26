@@ -5,8 +5,6 @@ include"connect.php";
 $username =$_POST['username'];
 $password =$_POST['password'];
 // To protect MySQL injection 
-$username = stripslashes($username);
-$password = stripslashes($password);
 $password=md5($password);
 
 

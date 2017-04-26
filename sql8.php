@@ -36,9 +36,7 @@ echo "<button>Current Page(".$current.")</button>";
 //pop the next page
         
     $link=array_pop($_SESSION["navlinks"]);
-echo "<button><a href='";
-echo $link;
-echo "'>Next Page (".$link.")</a></button><br>";
+echo "<button><a href='".$link."'>Next Page (".$link.")</a></button><br>";
     }
     
 //store the current page in the session
